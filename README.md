@@ -1,26 +1,43 @@
+[npm]: https://img.shields.io/npm/v/cardinal-direction.svg?color=949393
+[install size]: https://badgen.net/packagephobia/install/cardinal-direction?color=949393
+[support]: https://img.shields.io/static/v1.svg?logo=paypal&label=Support&message=Mudlabs&style=for-the-badge&color=0c67b5&labelColor=afb0b9
+<!-- Badges -->
+[![npm]](https://www.npmjs.com/package/cardinal-direction)
+[![install size]](https://www.npmjs.com/package/cardinal-direction)
+<br/>
+[![support]](https://paypal.me/mudlabs)
+
 # Cardinal Direction
 
 Each of the **4** main compass quadrants _(N,E,S,W)_, contain **7** sub-regions. This tool can be used to convert a degree ranging from `0-360` to a correlated cardinal direction.
 
+---
+
 **Example of North Quadrant Cardinal Directions**
 
-- N — _North_
-- NbE — _North by East_
-- NNE — _North North-East_
-- NEbN — _North-East by North_
-- NE — _North-East_
-- NEbE — _North-East by East_
-- ENE — _East North-East_
-- EbN — _East by North_
+See [CardinalDirection](#cardinaldirection-enum) for the full list.
+
+- N – _North_
+- NbE – _North by East_
+- NNE – _Noth-northeast_
+- NEbN – _Northeast by North_
+- NE – _Northeast_
+- NEbE – _Northeast by East_
+- ENE – _East-northeast_
+- EbN – _East by North_
+
+---
+
+## Install
+```
+npm install cardinal-direction
+```
 
 ---
 
 ## Usage
 
-First require it.
-
 ```js
-// JavaScript
 const Compass = require("cardinal-direction");
 ```
 
@@ -74,8 +91,8 @@ This subset enum can be used to fine tune the return value of [cardinalFromDegre
 | ------------- | ----------------------------------------------------------------------------- |
 | Full          | Enables all possible cardinal directions to be retuned. **_Default_**         |
 | Basic         | Restricts the possible returned cardinals to _N_,_E_,_S_,_W_.                 |
-| Ordinal       | Extends `Basic` to include _NE_,_ES_,_SW_,_WN_,.                              |
-| Intercardinal | Extends `Ordinal` to include _NNE_,_ENE_,_EES_,_SES_,_SSW_,_WSW_,_WWN_,_NWN_. |
+| Ordinal       | Extends `Basic` to include _NE_,_SE_,_SW_,_NW_,.                              |
+| Intercardinal | Extends `Ordinal` to include _NNE_,_ENE_,_ESE_,_SSE_,_SSW_,_WSW_,_WNW_,_NNW_. |
 
 ### CardinalDirection enum
 
@@ -90,7 +107,7 @@ Compass.CardinalDirection.N; // 0
 | Name | Value | Legend             |
 | ---- | ----- | ------------------ |
 | N    | 0     | North              |
-| Nbe  | 1     | North by East      |
+| NbE  | 1     | North by East      |
 | NNE  | 2     | Noth-northeast     |
 | NEbN | 3     | Northeast by North |
 | NE   | 4     | Northeast          |
