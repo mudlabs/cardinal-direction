@@ -27,6 +27,12 @@
     "Degree",
     "Convert",
     "Cardinal",
-    "Direction"
+    "Ordinal",
+    "Intercardinal",
+    "Direction",
+    "North",
+    "South",
+    "East",
+    "West"
   ]
 }
