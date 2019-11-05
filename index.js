@@ -1,10 +1,26 @@
 "use strict";
+let CardinalSubset;
+let CardinalDirection;
 const CardinalIncrement = 11.25;
 function cardinalIntFromDegree(degree) {
   const int = Math.round(degree / CardinalIncrement);
   return int > 31 ? 0 : int;
 }
-export var CardinalDirection;
+function cardinalFromIntSubset(_int, subset) {
+  const int = Math.round(_int / subset) * subset;
+  return CardinalDirection[int > 32 - subset + subset / 2 ? 0 : int];
+}
+function cardinalFromDegree(degree, subset) {
+  const int = cardinalIntFromDegree(degree);
+  return subset ? cardinalFromIntSubset(int, subset) : CardinalDirection[int];
+}
+function degreeFromCardinal(cardinal) {
+  if (typeof cardinal === "number") {
+    return CardinalIncrement * CardinalDirection[CardinalDirection[cardinal]];
+  } else {
+    return CardinalIncrement * CardinalDirection[cardinal];
+  }
+}
 (function(CardinalDirection) {
   CardinalDirection[(CardinalDirection["N"] = 0)] = "N";
   CardinalDirection[(CardinalDirection["NbE"] = 1)] = "NbE";
@@ -39,23 +55,13 @@ export var CardinalDirection;
   CardinalDirection[(CardinalDirection["NWN"] = 30)] = "NWN";
   CardinalDirection[(CardinalDirection["NbW"] = 31)] = "NbW";
 })(CardinalDirection || (CardinalDirection = {}));
-export var CardinalSubset;
 (function(CardinalSubset) {
   CardinalSubset[(CardinalSubset["Basic"] = 8)] = "Basic";
   CardinalSubset[(CardinalSubset["Partial"] = 4)] = "Partial";
   CardinalSubset[(CardinalSubset["PartialPlus"] = 2)] = "PartialPlus";
   CardinalSubset[(CardinalSubset["Full"] = 1)] = "Full";
 })(CardinalSubset || (CardinalSubset = {}));
-export function cardinalFromDegree(degree, subset) {
-  const int = cardinalIntFromDegree(degree);
-  return subset
-    ? cardinalFromInt(Math.round(int / subset) * subset)
-    : cardinalFromInt(int);
-}
-export function degreeFromCardinal(cardinal) {
-  if (typeof cardinal === "number") {
-    return CardinalIncrement * CardinalDirection[CardinalDirection[cardinal]];
-  } else {
-    return CardinalIncrement * CardinalDirection[cardinal];
-  }
-}
+exports.CardinalSubset = CardinalSubset;
+exports.CardinalDirection = CardinalDirection;
+exports.cardinalFromDegree = cardinalFromDegree;
+exports.degreeFromCardinal = degreeFromCardinal;
