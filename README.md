@@ -70,12 +70,12 @@ Compass.degreeFromCardinal(8);
 
 This subset enum can be used to fine tune the return value of [cardinalFromDegree](#cardinalfromdegree). When used the specified `degree` will be pushed to the nearest accepted cardinal direction, based on your restriction.
 
-| Value       | Description                                                                   |
-| ----------- | ----------------------------------------------------------------------------- |
-| Basic       | Restricts the possible returned cardinals to _N_,_E_,_S_,_W_.                 |
-| Partial     | Extends `Basic` to include _NE_,_ES_,_SW_,_WN_,.                              |
-| PartialPlus | Extends `Partial` to include _NNE_,_ENE_,_EES_,_SES_,_SSW_,_WSW_,_WWN_,_NWN_. |
-| Full        | Enables all possible cardinal directions to be retuned. **_Default_**         |
+| Value         | Description                                                                   |
+| ------------- | ----------------------------------------------------------------------------- |
+| Full          | Enables all possible cardinal directions to be retuned. **_Default_**         |
+| Basic         | Restricts the possible returned cardinals to _N_,_E_,_S_,_W_.                 |
+| Ordinal       | Extends `Basic` to include _NE_,_ES_,_SW_,_WN_,.                              |
+| Intercardinal | Extends `Ordinal` to include _NNE_,_ENE_,_EES_,_SES_,_SSW_,_WSW_,_WWN_,_NWN_. |
 
 ### CardinalDirection enum
 
@@ -87,37 +87,37 @@ Compass.CardinalDirection["N"]; // 0
 Compass.CardinalDirection.N; // 0
 ```
 
-| Name | Value |
-| ---- | ----- |
-| N    | 0     |
-| NbE  | 1     |
-| NNE  | 2     |
-| NEbN | 3     |
-| NE   | 4     |
-| NEbE | 5     |
-| ENE  | 6     |
-| EbN  | 7     |
-| E    | 8     |
-| EbS  | 9     |
-| EES  | 10    |
-| ESbE | 11    |
-| ES   | 12    |
-| ESbS | 13    |
-| SES  | 14    |
-| SbE  | 15    |
-| S    | 16    |
-| SbW  | 17    |
-| SSW  | 18    |
-| SWbS | 19    |
-| SW   | 20    |
-| SWbW | 21    |
-| WSW  | 21    |
-| WbS  | 23    |
-| W    | 24    |
-| WbN  | 25    |
-| WWN  | 26    |
-| WNbW | 27    |
-| WN   | 28    |
-| WNbN | 29    |
-| NWN  | 30    |
-| NbW  | 31    |
+| Name | Value | Legend             |
+| ---- | ----- | ------------------ |
+| N    | 0     | North              |
+| Nbe  | 1     | North by East      |
+| NNE  | 2     | Noth-northeast     |
+| NEbN | 3     | Northeast by North |
+| NE   | 4     | Northeast          |
+| NEbE | 5     | Northeast by East  |
+| ENE  | 6     | East-northeast     |
+| EbN  | 7     | East by North      |
+| E    | 8     | East               |
+| EbS  | 9     | East by South      |
+| ESE  | 10    | East-southeast     |
+| SEbE | 11    | Southeast by East  |
+| SE   | 12    | Southeast          |
+| SEbS | 13    | Southeast By South |
+| SSE  | 14    | South-southeast    |
+| SbE  | 15    | South be East      |
+| S    | 16    | South              |
+| SbW  | 17    | South by West      |
+| SSW  | 18    | South-southwest    |
+| SWbS | 19    | Southwest by South |
+| SW   | 20    | Southwest          |
+| SWbW | 21    | Southwest by West  |
+| WSW  | 22    | West-southwest     |
+| WbS  | 23    | West by South      |
+| W    | 24    | West               |
+| Wbs  | 25    | West by North      |
+| WNW  | 26    | West-northwest     |
+| NWbW | 27    | Northwest by West  |
+| NW   | 28    | Northwest          |
+| NWbN | 29    | Northwest by North |
+| NNW  | 30    | North-northwest    |
+| NbW  | 31    | North by West      |
