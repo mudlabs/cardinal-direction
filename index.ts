@@ -87,7 +87,7 @@ export enum CardinalDirection {
   "WSW",
   "WbS",
   "W",
-  "Wbs",
+  "WbN",
   "WNW",
   "NWbW",
   "NW",

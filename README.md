@@ -1,11 +1,11 @@
-[npm]: https://img.shields.io/npm/v/cardinal-direction.svg?color=949393
-[install size]: https://badgen.net/packagephobia/install/cardinal-direction?color=949393
-[support]: https://img.shields.io/static/v1.svg?logo=paypal&label=Support&message=Mudlabs&style=for-the-badge&color=0c67b5&labelColor=afb0b9
+[npm]: https://img.shields.io/npm/v/cardinal-direction.svg?labelColor=cb3837&color=faebeb&style=for-the-badge
+[size]: https://img.shields.io/github/languages/code-size/mudlabs/cardinal-direction?labelColor=146490&color=e9f6fc&style=for-the-badge
+[support]: https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/mudlabs/shieldsio/endpoint/badges/github-sponsor.json
 <!-- Badges -->
 [![npm]](https://www.npmjs.com/package/cardinal-direction)
-[![install size]](https://www.npmjs.com/package/cardinal-direction)
+[![size]](https://www.npmjs.com/package/cardinal-direction)
 <br/>
-[![support]](https://paypal.me/mudlabs)
+[![support]](https://github.com/sponsors/mudlabs)
 
 # Cardinal Direction
 
@@ -19,11 +19,11 @@ See [CardinalDirection](#cardinaldirection-enum) for the full list.
 
 - N – _North_
 - NbE – _North by East_
-- NNE – _Noth-northeast_
+- NNE – _North Northeast_
 - NEbN – _Northeast by North_
 - NE – _Northeast_
 - NEbE – _Northeast by East_
-- ENE – _East-northeast_
+- ENE – _East Northeast_
 - EbN – _East by North_
 
 ---
@@ -102,7 +102,7 @@ Converts a cardinal value to either its abbreviation or full title.
 
 ```js
 Compass.cardinalConverter(3): // NEbN
-Compass.cardinalConverter("NEbN"): // Notheast by North
+Compass.cardinalConverter("NEbN"): // Northeast by North
 Compass.cardinalConverter("Northeast by North"); // NEbN
 ```
 
@@ -142,7 +142,7 @@ Compass.CardinalDirection.N; // 0
 | ------- | ------------- | ----- |
 | 0  | N    | North              |
 | 1  | NbE  | North by East      |
-| 2  | NNE  | Noth Northeast     |
+| 2  | NNE  | North Northeast     |
 | 3  | NEbN | Northeast by North |
 | 4  | NE   | Northeast          |
 | 5  | NEbE | Northeast by East  |
@@ -153,9 +153,9 @@ Compass.CardinalDirection.N; // 0
 | 10 | ESE  | East Southeast     |
 | 11 | SEbE | Southeast by East  |
 | 12 | SE   | Southeast          |
-| 13 | SEbS | Southeast By South |
+| 13 | SEbS | Southeast by South |
 | 14 | SSE  | South Southeast    |
-| 15 | SbE  | South be East      |
+| 15 | SbE  | South by East      |
 | 16 | S    | South              |
 | 17 | SbW  | South by West      |
 | 18 | SSW  | South Southwest    |
