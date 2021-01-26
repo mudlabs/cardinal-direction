@@ -22,6 +22,41 @@ function cardinalFromIntSubset(
   return CardinalDirection[int > 32 - subset + subset / 2 ? 0 : int];
 }
 
+enum CardinalTitle {
+  "North",
+  "North by East",
+  "North Northeast",
+  "Northeast by North",
+  "Northeast",
+  "Northeast by East",
+  "East Northeast",
+  "East by North",
+  "East",
+  "East by South",
+  "East Southeast",
+  "Southeast by East",
+  "Southeast",
+  "Southeast by South",
+  "South Southeast",
+  "South by East",
+  "South",
+  "South by West",
+  "South Southwest",
+  "Southwest by South",
+  "Southwest",
+  "Southwest by West",
+  "West Southwest",
+  "West by South",
+  "West",
+  "West by North",
+  "West Northwest",
+  "Northwest by West",
+  "Northwest",
+  "Northwest by North",
+  "North Northwest",
+  "North by West"
+}
+
 /**
  * There are 32 cardinal-type direction on a compass.
  * - This numeric enum is `0` indexed.
@@ -61,6 +96,7 @@ export enum CardinalDirection {
   "NbW"
 }
 
+
 /**
  * Used to restrict the type of cardinal direction that can be returned by `cardinalFromDegree`. When a subset is specified the degree will be pushed the the nearest acceptable cardinal.
  * @member Full - All directions can be returned. ___[DEFAULT]___
@@ -98,3 +134,18 @@ export function degreeFromCardinal(cardinal: CardinalDirection): number {
   const cardinalInt = ensureProperType(cardinal, CardinalDirection);
   return CardinalIncrement * cardinalInt;
 }
+
+/**
+ * Takes a cardinal value and converts it to either its abbreviation or full title.
+ * Integer representations are explicitly converted to cardinal abbreviations.
+ * See the `Cardinal Table` in the README for context.
+ * @param cardinal - One of the `CardinalDirection` enum member values, or its full title.
+ * @returns [string] The converted cardinal value.
+ */
+export function cardinalConverter(cardinal: string | number): string {
+  if (typeof cardinal === "number") return CardinalDirection[cardinal];
+  return CardinalDirection[cardinal as keyof typeof CardinalDirection] !== undefined
+    ? CardinalTitle[CardinalDirection[cardinal as keyof typeof CardinalDirection]]
+    : CardinalDirection[CardinalTitle[cardinal as keyof typeof CardinalTitle]]
+}
+

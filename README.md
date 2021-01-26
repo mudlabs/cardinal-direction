@@ -41,6 +41,9 @@ npm install cardinal-direction
 const Compass = require("cardinal-direction");
 ```
 
+
+<br/>
+
 ### cardinalFromDegree
 
 Converts a compass degree value into its correlated cardinal value.
@@ -64,6 +67,9 @@ Compass.cardinalFromDegree(221);
 Compass.cardinalFromDegree(221, Compass.CardinalSubset.Basic);
 ```
 
+
+<br/>
+
 ### degreeFromCardinal
 
 Converts a cardinal direction into its correlated degree value.
@@ -83,6 +89,26 @@ Compass.degreeFromCardinal(Compass.CardinalDirection[8]);
 Compass.degreeFromCardinal(8);
 ```
 
+
+<br/>
+
+### cardinalConverter
+
+Converts a cardinal value to either its abbreviation or full title.
+
+| Param | Type | Required | Description |
+| --- | --- | --- | --- |
+| cardinal | string/number | yes | One of the `CardinalDirection` enum member values, or its full title. See [Cardinal Table](#cardinal-table) for context. |
+
+```js
+Compass.cardinalConverter(3): // NEbN
+Compass.cardinalConverter("NEbN"): // Notheast by North
+Compass.cardinalConverter("Northeast by North"); // NEbN
+```
+
+
+<br/>
+
 ### CardinalSubset enum
 
 This subset enum can be used to fine tune the return value of [cardinalFromDegree](#cardinalfromdegree). When used the specified `degree` will be pushed to the nearest accepted cardinal direction, based on your restriction.
@@ -94,6 +120,9 @@ This subset enum can be used to fine tune the return value of [cardinalFromDegre
 | Ordinal       | Extends `Basic` to include _NE_,_SE_,_SW_,_NW_,.                              |
 | Intercardinal | Extends `Ordinal` to include _NNE_,_ENE_,_ESE_,_SSE_,_SSW_,_WSW_,_WNW_,_NNW_. |
 
+
+<br/>
+
 ### CardinalDirection enum
 
 There are `32` cardinal directions on a compass. But this numeric enum is `0` indexed.
@@ -104,37 +133,42 @@ Compass.CardinalDirection["N"]; // 0
 Compass.CardinalDirection.N; // 0
 ```
 
-| Name | Value | Legend             |
-| ---- | ----- | ------------------ |
-| N    | 0     | North              |
-| NbE  | 1     | North by East      |
-| NNE  | 2     | Noth-northeast     |
-| NEbN | 3     | Northeast by North |
-| NE   | 4     | Northeast          |
-| NEbE | 5     | Northeast by East  |
-| ENE  | 6     | East-northeast     |
-| EbN  | 7     | East by North      |
-| E    | 8     | East               |
-| EbS  | 9     | East by South      |
-| ESE  | 10    | East-southeast     |
-| SEbE | 11    | Southeast by East  |
-| SE   | 12    | Southeast          |
-| SEbS | 13    | Southeast By South |
-| SSE  | 14    | South-southeast    |
-| SbE  | 15    | South be East      |
-| S    | 16    | South              |
-| SbW  | 17    | South by West      |
-| SSW  | 18    | South-southwest    |
-| SWbS | 19    | Southwest by South |
-| SW   | 20    | Southwest          |
-| SWbW | 21    | Southwest by West  |
-| WSW  | 22    | West-southwest     |
-| WbS  | 23    | West by South      |
-| W    | 24    | West               |
-| Wbs  | 25    | West by North      |
-| WNW  | 26    | West-northwest     |
-| NWbW | 27    | Northwest by West  |
-| NW   | 28    | Northwest          |
-| NWbN | 29    | Northwest by North |
-| NNW  | 30    | North-northwest    |
-| NbW  | 31    | North by West      |
+
+<br/>
+
+### Cardinal Table
+
+| Integer | Abbreviation  | Title |
+| ------- | ------------- | ----- |
+| 0  | N    | North              |
+| 1  | NbE  | North by East      |
+| 2  | NNE  | Noth Northeast     |
+| 3  | NEbN | Northeast by North |
+| 4  | NE   | Northeast          |
+| 5  | NEbE | Northeast by East  |
+| 6  | ENE  | East Northeast     |
+| 7  | EbN  | East by North      |
+| 8  | E    | East               |
+| 9  | EbS  | East by South      |
+| 10 | ESE  | East Southeast     |
+| 11 | SEbE | Southeast by East  |
+| 12 | SE   | Southeast          |
+| 13 | SEbS | Southeast By South |
+| 14 | SSE  | South Southeast    |
+| 15 | SbE  | South be East      |
+| 16 | S    | South              |
+| 17 | SbW  | South by West      |
+| 18 | SSW  | South Southwest    |
+| 19 | SWbS | Southwest by South |
+| 20 | SW   | Southwest          |
+| 21 | SWbW | Southwest by West  |
+| 22 | WSW  | West Southwest     |
+| 23 | WbS  | West by South      |
+| 24 | W    | West               |
+| 25 | Wbs  | West by North      |
+| 26 | WNW  | West Northwest     |
+| 27 | NWbW | Northwest by West  |
+| 28 | NW   | Northwest          |
+| 29 | NWbN | Northwest by North |
+| 30 | NNW  | North Northwest    |
+| 31 | NbW  | North by West      |
